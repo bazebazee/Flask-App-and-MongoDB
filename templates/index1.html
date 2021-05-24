@@ -1,0 +1,49 @@
+{% extends "home.html" %}
+
+{% block content %}
+<doctype html="">
+    <title>Search Form</title>
+             <h1 class="center">Dashboard</h1>
+             <p class="center">You are currently logged in.</p>
+             <div class="card-wrapper">
+
+             <div class="card"> 
+             <h2></h2>
+             <p></p><p>
+             <link rel="stylesheet" href="/static/styles.css">
+             <link rel="stylesheet" href="/static/normalize.css">
+
+              <h1 class="center">Search Form</h1>
+              <h1 class="center">
+            <a href="{{ url_for('.new_data') }}" class="btn"> New Data Entry </a>
+          </h1>
+      </form>
+
+    <p class="center">
+   <div class="card-wrapper">
+
+  <div class="card">       
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class="flashes">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+   {% endif %}
+   {% endwith %}
+   {% from "_formhelpers.html" import render_field %}
+
+    </p></form>
+    <form method="POST" action="/results">
+    <dl>
+    {{ render_field(form.select) }}
+    <p>
+    {{ render_field(form.search) }}
+  </p></dl>
+  <p><input type="submit" value="Submit" class="btn">
+  </p></form>
+</div>
+</doctype>
+
+{% endblock %}

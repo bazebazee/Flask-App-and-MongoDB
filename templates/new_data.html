@@ -1,0 +1,30 @@
+<doctype html="">
+
+<title>New Data - User Search</title>
+  
+    <div class="card-wrapper">
+
+    <div class="card">      
+    <h1 class="center">New Data</h1>
+    <h2 class= "center">Insert new data:</h2>
+    <p class="center">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/normalize.css">
+    {% from "_formhelpers.html" import render_field %}
+
+
+     <form method="post">
+     <dl class="center">
+        {{ render_field(form.name) }}
+        {{ render_field(form.surname) }}
+        {{ render_field(form.street) }}
+        {{ render_field(form.city) }}
+        {{ render_field(form.country) }}
+     </dl>
+     <p><input type="submit" value="Submit" class="btn">
+    
+   </div>
+
+
+</p></form>
+</doctype>

@@ -1,0 +1,15 @@
+<doctype html="">
+   <title>Edit Data</title>
+   <h2>Edit Data</h2>
+   {% from "_formhelpers.html" import render_field %}
+    <form method="post">
+    <dl>
+        {{ render_field(form.name) }}
+        {{ render_field(form.surname) }}
+        {{ render_field(form.street) }}
+        {{ render_field(form.city) }}
+        {{ render_field(form.country) }}
+    </dl>
+    <p><input type="submit" value="Submit" class="btn">
+</p></form>
+</doctype>
